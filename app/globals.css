@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --brand-red: #7a1518;
+  --brand-red-dark: #5c0f12;
+  --brand-red-light: #9c2226;
+  --brand-gold: #d9a934;
+  --brand-gold-dark: #b8902a;
+  --brand-black: #1b1410;
+}
+
+@theme inline {
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-dark: var(--brand-red-dark);
+  --color-brand-red-light: var(--brand-red-light);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-dark: var(--brand-gold-dark);
+  --color-brand-black: var(--brand-black);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.tea-texture {
+  background-image: radial-gradient(
+    circle at 20% 20%,
+    rgba(255, 255, 255, 0.04) 0%,
+    transparent 40%
+  );
+}
+
+.bg-red-textured {
+  background-color: var(--brand-red);
+  background-image: url("/backgrounds/leaf-pattern.jpg");
+  background-repeat: repeat;
+  background-size: 350px 250px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+
+/* Global language/RTL support */
+html[dir="rtl"] body { direction: rtl; }
+html[dir="rtl"] .text-left { text-align: right; }
+html[dir="rtl"] .text-right { text-align: left; }
+
+/* Keep Google Translate hidden; our own language control drives it. */
+.goog-te-banner-frame, .goog-te-balloon-frame, .skiptranslate > iframe { display: none !important; }
+body { top: 0 !important; }
+.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
+
+
+.contact-input {
+  width: 100%;
+  min-height: 48px;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(27, 20, 16, 0.14);
+  background: #fff;
+  padding: 0.75rem 0.95rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--brand-black);
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.contact-input::placeholder { color: rgba(27, 20, 16, 0.42); }
+.contact-input:focus {
+  border-color: var(--brand-red);
+  box-shadow: 0 0 0 3px rgba(122, 21, 24, 0.12);
+}
+
+textarea.contact-input { min-height: 150px; }
+
+/* Responsive navigation + chat polish */
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+body.mobile-nav-open { overflow: hidden; }
+
+.notranslate,
+.notranslate * { unicode-bidi: isolate; }
+
+#google_translate_element,
+.goog-te-gadget,
+.goog-te-gadget-simple { display: none !important; }
+
+@media (max-width: 1023px) {
+  header a img { flex-shrink: 0; }
+}
+
+@media (max-width: 639px) {
+  .contact-input { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
