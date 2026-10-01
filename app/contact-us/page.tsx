@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 export default function ContactUsPage() {
   return (
     <section className="min-h-[calc(100vh-101px)] bg-red-textured">
-      {/* Contact Hero */}
+      {/* Contact Hero */ }
       <div className="bg-red-textured px-6 py-16 text-center text-white sm:py-20 lg:py-24">
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand-gold">
           We&apos;re here to help
