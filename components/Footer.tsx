@@ -166,13 +166,7 @@ export default function Footer() {
       {/* Copyright / Legal */}
       <div className="border-t border-white/15 px-6 py-6 text-center text-xs font-normal text-white/60 md:px-16">
         <p>
-          © 2026 Ultra Rich. All rights reserved. Designed &amp; Developed by{" "}
-          <a
-            href="#"
-            className="underline underline-offset-2 transition hover:text-white"
-          >
-            THE BLUE DOT
-          </a>
+          © 2026 Ultra Rich. All rights reserved.
         </p>
 
         <p className="mt-2 flex flex-wrap justify-center gap-x-2 gap-y-1">
